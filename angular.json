@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": ["aws-sdk/clients/s3"],
             "outputPath": "dist/angular-gl-social-network",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -25,14 +26,21 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "./node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+              "./node_modules/froala-editor/css/froala_style.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/tinymce/tinymce.min.js",
+              "src/app/post/create-post/editor.js",
+              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
+            ]
           },
           "configurations": {
             "production": {
