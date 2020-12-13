@@ -7,7 +7,7 @@ import { CommunityService } from 'src/app/community/community.service';
 import { throwError } from 'rxjs';
 import { CreatePostPayload } from './create-post.payload';
 import {ImageUploadService} from '../../shared/image-upload/image-upload.service';
-import {ToastrService} from "ngx-toastr";
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-post',
@@ -67,7 +67,7 @@ export class CreatePostComponent implements OnInit {
 
   submit() {
     const file = this.toFile.item(0);
-    this.imageUploadService.fileUpload(file);
+    this.imageUploadService.fileUploadToAws(file);
   }
 
   onChange(event) {
