@@ -1,0 +1,19 @@
+.sidebar-view-community {
+  width: 312px;
+  height: 242px;
+  --post-line-color: #ccc;
+  border: 1px solid #000000;
+  margin-bottom: 10px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #89878c;
+  position: relative;
+  border-radius: 4px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.sidebar-view-community {
+  height: 400px;
+}
