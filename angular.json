@@ -38,7 +38,6 @@
             ],
             "scripts": [
               "node_modules/tinymce/tinymce.min.js",
-              "src/app/post/create-post/editor.js",
               "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
             ]
           },
