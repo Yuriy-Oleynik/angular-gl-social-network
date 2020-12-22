@@ -10,11 +10,11 @@ export class CommunityService {
   constructor(private http: HttpClient) { }
 
   getAllCommunities(): Observable<Array<CommunityModel>> {
-    return this.http.get<Array<CommunityModel>>('http://localhost:8080/api/community');
+    return this.http.get<Array<CommunityModel>>('http://3.138.68.3:8080/api/community');
   }
 
   createCommunity(communityModel: CommunityModel): Observable<CommunityModel> {
-    return this.http.post<CommunityModel>('http://localhost:8080/api/community',
+    return this.http.post<CommunityModel>('http://3.138.68.3:8080/api/community',
       communityModel);
   }
 }

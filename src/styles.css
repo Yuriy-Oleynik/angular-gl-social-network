@@ -15,6 +15,12 @@ input.ng-invalid.ng-touched {
   color: #000000;
 
 }
+.link-button {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+}
 
 .login,
 .sign-up {

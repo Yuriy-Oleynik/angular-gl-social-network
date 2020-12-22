@@ -12,22 +12,22 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getAllPosts(): Observable<Array<PostModel>> {
-    return this.http.get<Array<PostModel>>('http://localhost:8080/api/posts/');
+    return this.http.get<Array<PostModel>>('http://3.138.68.3:8080/api/posts/');
   }
 
   createPost(postPayload: CreatePostPayload): Observable<any> {
-    return this.http.post('http://localhost:8080/api/posts/', postPayload);
+    return this.http.post('http://3.138.68.3:8080/api/posts/', postPayload);
   }
 
   deletePost(id: number): Observable<any> {
-    return this.http.delete('http://localhost:8080/api/posts/delete/' + id);
+    return this.http.delete('http://3.138.68.3:8080/api/posts/delete/' + id);
   }
 
   getPost(id: number): Observable<PostModel> {
-    return this.http.get<PostModel>('http://localhost:8080/api/posts/' + id);
+    return this.http.get<PostModel>('http://3.138.68.3:8080/api/posts/' + id);
   }
 
   getAllPostsByUser(name: string): Observable<PostModel[]> {
-    return this.http.get<PostModel[]>('http://localhost:8080/api/posts/by-user/' + name);
+    return this.http.get<PostModel[]>('http://3.138.68.3:8080/api/posts/by-user/' + name);
   }
 }
