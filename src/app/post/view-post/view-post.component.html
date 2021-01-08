@@ -20,6 +20,7 @@
           <a href="{{post.url}}" target="_blank" class="post-title">{{post.postName}}</a>
           <div>
             <p class="post-text" [innerHtml]="post.description"></p>
+            <img class="image-settings" src="{{post.imageKey}}">
           </div>
           <div class="post-comment">
             <form [formGroup]="commentForm" (ngSubmit)="postComment()">

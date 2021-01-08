@@ -14,6 +14,7 @@
     </div>
     <div>
       <p class="post-text" [innerHtml]="post.description"></p>
+      <img class="image-settings" src="{{post.imageKey}}">
     </div>
     <hr />
     <span>
@@ -21,9 +22,6 @@
         <fa-icon [icon]="faComments"></fa-icon>
         Comments({{post.commentCount}})
       </a>
-<!--      <button class="login" (click)="goToPost(post.id)">-->
-<!--        Read Post-->
-<!--      </button>-->
     </span>
   </div>
 </div>

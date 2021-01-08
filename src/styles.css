@@ -11,6 +11,11 @@ input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
 
+.image-settings {
+  max-width: 50%;
+  max-height: 50%;
+}
+
 .loginY {
   color: #000000;
 

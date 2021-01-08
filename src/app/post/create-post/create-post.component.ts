@@ -8,6 +8,8 @@ import { throwError } from 'rxjs';
 import { CreatePostPayload } from './create-post.payload';
 import {ImageUploadService} from '../../shared/image-upload/image-upload.service';
 import {ToastrService} from 'ngx-toastr';
+import {isNullOrUndefined} from "util";
+import {isNotNullOrUndefined} from "codelyzer/util/isNotNullOrUndefined";
 
 @Component({
   selector: 'app-create-post',
@@ -28,7 +30,8 @@ export class CreatePostComponent implements OnInit {
       postName: '',
       url: '',
       description: '',
-      communityName: ''
+      communityName: '',
+      imageKey: ''
     }
   }
 
@@ -38,6 +41,7 @@ export class CreatePostComponent implements OnInit {
       communityName: new FormControl('', Validators.required),
       url: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
+      imageKey: new FormControl('', Validators.required)
     });
     this.communityService.getAllCommunities().subscribe((data) => {
       this.communities = data;
@@ -47,10 +51,13 @@ export class CreatePostComponent implements OnInit {
   }
 
   createPost() {
+    const file = this.toFile.item(0);
     this.postPayload.postName = this.createPostForm.get('postName').value;
     this.postPayload.communityName = this.createPostForm.get('communityName').value;
     this.postPayload.url = this.createPostForm.get('url').value;
     this.postPayload.description = this.createPostForm.get('description').value;
+    this.imageUploadService.fileUploadToAws(file);
+    this.postPayload.imageKey = file.name;
 
     this.postService.createPost(this.postPayload).subscribe((data) => {
       this.router.navigateByUrl('/');

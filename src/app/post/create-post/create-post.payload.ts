@@ -3,4 +3,5 @@ export class CreatePostPayload {
   communityName?: string;
   url?: string;
   description: string;
+  imageKey: string;
 }
