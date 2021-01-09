@@ -46,3 +46,22 @@ input.ng-invalid.ng-touched {
   padding: 3px 16px;
   opacity: 1;
 }
+
+.local {
+  background-color: transparent;
+  border-color: #000000;
+  color: #000000;
+  fill: #000000;
+  border: 0px solid;
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 24px;
+  text-transform: uppercase;
+  padding: 3px 16px;
+  opacity: 1;
+}

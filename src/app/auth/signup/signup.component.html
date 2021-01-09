@@ -4,49 +4,40 @@
     <div class="col-md-6">
       <div class="card">
         <div class="card-header" style="text-align: center">
-          <h4>Register</h4>
+          <h4>{{'register' | translate}}</h4>
         </div>
         <div class="card-body">
           <form [formGroup]="signupForm" (ngSubmit)="signup()">
             <div class="form-group row">
-              <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail
-                Address</label>
+              <label for="email_address" class="col-md-4 col-form-label text-md-right">{{'email.address' | translate}}</label>
               <div class="col-md-6">
                 <input type="text" [formControlName]="'email'" id="email_address" class="form-control"
                        name="email-address" required
                        autofocus>
-                <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">
-                                    Please provide a valid email
-                                </span>
+                <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">{{'provide.valid.email' | translate}}</span>
               </div>
             </div>
 
             <div class="form-group row">
-              <label class="col-md-4 col-form-label text-md-right">User Name</label>
+              <label class="col-md-4 col-form-label text-md-right">{{'username' | translate}}</label>
               <div class="col-md-6">
                 <input type="text" [formControlName]="'username'" class="form-control" required autofocus>
-                <span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">
-                                    Please provide a valid username
-                                </span>
+                <span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">{{'provide.valid.username' | translate}}</span>
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+              <label for="password" class="col-md-4 col-form-label text-md-right">{{'password' | translate}}</label>
               <div class="col-md-6">
                 <input type="password" [formControlName]="'password'" id="password" class="form-control" name="password"
                        required>
-                <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
-                                    Please provide a valid Password
-                                </span>
+                <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">{{'provide.valid.password' | translate}}</span>
               </div>
             </div>
             <span class="col-md-6 offset-md-4">
-                            <button type="submit" class="sign-up">
-                                Sign Up
-                            </button>
-                            <span style="padding-left: 15px">Existing User? Go to <a
-                              routerLink="/login">Log In</a></span>
+                            <button type="submit" class="sign-up">{{'signup' | translate}}</button>
+                            <span style="padding-left: 15px">{{'existing.user.go.to' | translate}}<a
+                              routerLink="/login">{{'login' | translate}}</a></span>
                         </span>
           </form>
         </div>

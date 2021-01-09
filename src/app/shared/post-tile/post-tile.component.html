@@ -5,7 +5,7 @@
   <div class="col-md-11">
     <span class="community-info">
       <span class="community-text"><a class="posturl" routerLink="">{{post.communityName}}</a></span>
-      <span> . Posted by <a class="username" href="/user-profile/{{post.userName}}">{{post.userName}}</a></span>
+      <span>{{'posted.by' | translate}}<a class="username" href="/user-profile/{{post.userName}}">{{post.userName}}</a></span>
       <span> . {{post.duration}}</span>
     </span>
     <hr />
@@ -20,7 +20,7 @@
     <span>
       <a class="btnCommments" (click)="goToPost(post.id)" role="button">
         <fa-icon [icon]="faComments"></fa-icon>
-        Comments({{post.commentCount}})
+        {{'comments' | translate}}({{post.commentCount}})
       </a>
     </span>
   </div>

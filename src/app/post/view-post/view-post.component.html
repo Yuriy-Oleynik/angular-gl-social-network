@@ -9,9 +9,8 @@
         <div class="col-md-11">
           <span>
             <span class="community-text"><a class="post-url" href="">{{post.communityName}}</a></span>
-            <span> . Posted
-              <span> {{post.duration}} </span>
-              by
+            <span>{{'posted' | translate}}<span> {{post.duration}} </span>
+              {{'by' | translate}}
               <a class="username" href="">{{post.userName}}</a>
             </span>
           </span>
@@ -25,10 +24,10 @@
           <div class="post-comment">
             <form [formGroup]="commentForm" (ngSubmit)="postComment()">
               <div class="form-group">
-                <textarea class="form-control" [formControlName]="'text'" placeholder="Your Thoughts?"></textarea>
+                <textarea class="form-control" [formControlName]="'text'" placeholder="{{'your.thoughts' | translate}}"></textarea>
               </div>
-              <button type="submit" class="login float-right">Comment</button>
-              <button id="deletePost" class="login" (click)="deletePost()">Delete Post</button>
+              <button type="submit" class="login float-right">{{'comment' | translate}}</button>
+              <button id="deletePost" class="login" (click)="deletePost()">{{'delete.post' | translate}}</button>
             </form>
           </div>
           <div style="margin-top: 60px;" *ngFor="let comment of comments">
